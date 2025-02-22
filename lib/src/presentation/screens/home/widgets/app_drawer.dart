@@ -48,10 +48,12 @@ class AppDrawer extends ConsumerWidget {
           ListTile(
             leading: const Icon(Icons.logout),
             title: const Text('Logout'),
-            onTap: () {
+            onTap: () async {
               ref.read(authProvider.notifier).logout();
               Navigator.pop(context);
-              context.go(RoutesName.login);
+              WidgetsBinding.instance.addPostFrameCallback((_) {
+                context.go(RoutesName.login);
+              });
             },
           ),
           const Divider(),

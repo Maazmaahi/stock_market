@@ -18,10 +18,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   final TextEditingController _searchController = TextEditingController();
 
   void _onSearch() {
-    final query = _searchController.text.trim();
-    if (query.isNotEmpty) {
-      ref.read(stockSearchProvider.notifier).searchStocks(query);
-    }
+
   }
 
   @override
@@ -59,6 +56,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                           icon: Icon(Icons.clear, color: colorScheme.onSurface),
                           onPressed: () {
                             _searchController.clear();
+                            context.dismissKeyboard();
                             ref
                                 .read(stockSearchProvider.notifier)
                                 .clearResults();
@@ -66,7 +64,13 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                         ),
                       IconButton(
                         icon: Icon(Icons.search, color: colorScheme.onSurface),
-                        onPressed: _onSearch,
+                        onPressed: () {
+                          final query = _searchController.text.trim();
+                          context.dismissKeyboard();
+                          if (query.isNotEmpty) {
+                            ref.read(stockSearchProvider.notifier).searchStocks(query);
+                          }
+                        },
                       ),
                     ],
                   ),
