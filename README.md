@@ -85,7 +85,7 @@ This application uses an external API for stock data and user authentication. Yo
     The application uses JWT tokens for authentication. Ensure your API generates and verifies JWT tokens.
 
 ## Folder Structure
-
+```
 stock_market_app/
 ├── lib/
 │   ├── src/
@@ -106,6 +106,7 @@ stock_market_app/
 │   ├── main.dart
 ├── pubspec.yaml
 ├── README.md
+```
 
 ## Demo Video
 
