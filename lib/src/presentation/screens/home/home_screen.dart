@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:stock_market/src/presentation/widgets/loading/loading_indicator.dart';
 
 import '../../../core/core.dart';
 import '../../providers/providers.dart';
+import '../../widgets/widgets.dart';
 import 'widgets/app_drawer.dart';
 import 'widgets/stock_card.dart';
 
@@ -66,10 +66,10 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                         icon: Icon(Icons.search, color: colorScheme.onSurface),
                         onPressed: () {
                           final query = _searchController.text.trim();
-                          context.dismissKeyboard();
                           if (query.isNotEmpty) {
                             ref.read(stockSearchProvider.notifier).searchStocks(query);
                           }
+                          // context.dismissKeyboard();
                         },
                       ),
                     ],

@@ -57,6 +57,7 @@ This is a Flutter application for tracking and managing stock investments. It pr
 ## Dependencies
 
 -   `flutter_riverpod`: For state management.
+-   `riverpod`: For core and state management.
 -   `go_router`: For navigation.
 -   `dio`: For making HTTP requests.
 -   `flutter_secure_storage`: For secure storage of tokens and user data.
