@@ -28,7 +28,7 @@ This is a Flutter application for tracking and managing stock investments. It pr
 1.  **Clone the Repository:**
 
     ```bash
-    git clone <your-repository-link>
+    git clone https://github.com/Maazmaahi/stock_market
     cd stock_market_app
     ```
 
